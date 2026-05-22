@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貔貅联合储蓄银行 (LUSB) - 只存不取，理财奇迹</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements for Visual Premiumness -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <div class="app-container">
+        <!-- Stock Market Ticker (顶部跑马灯指数) -->
+        <div class="top-ticker">
+            <div class="ticker-content" id="ticker-content">
+                <span class="ticker-item"><i data-lucide="trending-down" class="text-danger"></i> 韭菜大盘指数: <strong>-99.98%</strong></span>
+                <span class="ticker-item"><i data-lucide="trending-up" class="text-warning"></i> 行长跑路概率: <strong>99.9% 稳步上升</strong></span>
+                <span class="ticker-item"><i data-lucide="shield-alert" class="text-info"></i> 备付准备金率: <strong>0.0000%</strong></span>
+                <span class="ticker-item"><i data-lucide="dollar-sign" class="text-success"></i> 离岸空壳资产: <strong>$888.8B (+250%)</strong></span>
+                <span class="ticker-item"><i data-lucide="coffee" class="text-warning"></i> 经理咖啡消耗率: <strong>+180%</strong></span>
+                <span class="ticker-item"><i data-lucide="frown" class="text-danger"></i> 储户心态指数: <strong>崩溃边缘</strong></span>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon-wrapper">
+                    <i data-lucide="gem" class="logo-icon animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="logo-title">貔貅联合储蓄银行</h1>
+                    <p class="logo-subtitle">PIXIU UNION SAVINGS BANK &bull; EST. 2026</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="badge badge-gold"><i data-lucide="shield-check"></i> 宇宙AAA级安全评级</span>
+                <span class="badge badge-danger-glow animate-pulse-fast"><i data-lucide="lock"></i> 资金单向物理隔离</span>
+            </div>
+        </header>
+
+        <!-- Dynamic LED Broadcast Banner (滚动大佬存款大屏幕) -->
+        <section class="led-section">
+            <div class="led-container">
+                <div class="led-tag">
+                    <span class="led-tag-dot animate-ping"></span>
+                    <i data-lucide="radio"></i> 实时播报
+                </div>
+                <div class="led-marquee-wrapper">
+                    <div class="led-marquee" id="led-marquee">
+                        <!-- Items populated dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- Column 1: Deposit Form Card -->
+            <section class="grid-card card-deposit">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <i data-lucide="wallet" class="icon-gold"></i>
+                        <h2>智能单向存款终端</h2>
+                    </div>
+                    <span class="card-subtitle">AI-Powered One-Way Deposit System</span>
+                </div>
+                
+                <form id="deposit-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="card-number">
+                            <span>输入个人储蓄卡号</span>
+                            <span class="input-desc">智能保护，防范提现</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <i data-lucide="credit-card" class="input-icon"></i>
+                            <input type="text" id="card-number" placeholder="6222 0200 **** ****" maxlength="23" autocomplete="off" required>
+                        </div>
+                        <p class="validation-tip" id="card-tip">请输入 16-19 位有效银行卡号进行“超度”</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deposit-amount">
+                            <span>拟存入金额 (CNY)</span>
+                            <span class="input-desc">多存多得，绝不退还</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <span class="currency-symbol">¥</span>
+                            <input type="number" id="deposit-amount" placeholder="存款金额，无上限" min="1" step="0.01" required>
+                        </div>
+                        <div class="amount-presets">
+                            <button type="button" class="preset-btn" data-value="100">💰 100元 (买个梦想)</button>
+                            <button type="button" class="preset-btn" data-value="50000">💴 5万 (私房碎银)</button>
+                            <button type="button" class="preset-btn" data-value="100000000">🏦 1亿 (一个小目标)</button>
+                            <button type="button" class="preset-btn" data-value="allin">🔥 梭哈 (全仓押注)</button>
+                        </div>
+                    </div>
+
+                    <!-- Funny Info Panel inside Form -->
+                    <div class="feature-checklist">
+                        <div class="checklist-item">
+                            <i data-lucide="check-circle" class="text-success"></i>
+                            <span>首创<strong>“物理吞钱技术”</strong>，保障资金与您永久脱钩</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i data-lucide="check-circle" class="text-success"></i>
+                            <span>超低提取门槛（需行长在南极签字授权）</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i data-lucide="check-circle" class="text-success"></i>
+                            <span>利息按秒计算，在系统崩溃前完全有效</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <span class="btn-glow-effect"></span>
+                        <i data-lucide="arrow-up-right"></i> 立即存入，启动财务升天
+                    </button>
+                </form>
+            </section>
+
+            <!-- Column 2: Chart & Financial Analytics Card -->
+            <section class="grid-card card-analytics">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <i data-lucide="bar-chart-3" class="icon-warning"></i>
+                        <h2>本行理财收益趋势分析</h2>
+                    </div>
+                    <span class="card-subtitle">Real-time Zero-Return Projection</span>
+                </div>
+
+                <div class="analytics-content">
+                    <!-- Fun Dynamic Financial Chart using custom SVG -->
+                    <div class="chart-container">
+                        <svg viewBox="0 0 400 200" class="fun-chart">
+                            <!-- Grid lines -->
+                            <line x1="0" y1="20" x2="400" y2="20" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                            <line x1="0" y1="70" x2="400" y2="70" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                            <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                            <line x1="0" y1="170" x2="400" y2="170" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+                            
+                            <!-- Graph line: showing a plunge into the ground -->
+                            <path d="M 0,40 Q 100,20 180,60 T 280,180 L 400,195" fill="none" stroke="url(#chart-gradient)" stroke-width="4" stroke-linecap="round" class="chart-path-anim"/>
+                            <path d="M 0,40 Q 100,20 180,60 T 280,180 L 400,195 L 400,200 L 0,200 Z" fill="url(#area-gradient)" opacity="0.15" />
+                            
+                            <!-- Markers -->
+                            <circle cx="180" cy="60" r="5" fill="#D4AF37" class="pulse-marker"/>
+                            <text x="190" y="55" fill="#D4AF37" font-size="10">行长买房点</text>
+                            
+                            <circle cx="280" cy="180" r="5" fill="#FF3B30" class="pulse-marker-danger"/>
+                            <text x="220" y="175" fill="#FF3B30" font-size="10">您的本金落地点</text>
+
+                            <!-- Gradient definitions -->
+                            <defs>
+                                <linearGradient id="chart-gradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#D4AF37"/>
+                                    <stop offset="50%" stop-color="#FF9500"/>
+                                    <stop offset="100%" stop-color="#FF3B30"/>
+                                </linearGradient>
+                                <linearGradient id="area-gradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#FF3B30"/>
+                                    <stop offset="100%" stop-color="#0a0f1d" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="chart-labels">
+                            <span>存入瞬间 (财富巅峰)</span>
+                            <span>跑路前夕 (惊慌失措)</span>
+                            <span>现在 (四大皆空)</span>
+                        </div>
+                    </div>
+
+                    <div class="analytics-metrics">
+                        <div class="metric-box">
+                            <span class="metric-name">今日净值流失</span>
+                            <span class="metric-value text-danger">-99.85%</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-name">存款生命周期</span>
+                            <span class="metric-value">0.8秒</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-name">行长私人泳池进度</span>
+                            <span class="metric-value text-warning">92.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Column 3: Live Gag Chatroom Card -->
+            <section class="grid-card card-chatroom">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <i data-lucide="messages-square" class="icon-info"></i>
+                        <h2>韭菜互助维权聊天室</h2>
+                    </div>
+                    <span class="card-subtitle">Public Support & Coping Room</span>
+                </div>
+
+                <div class="chat-wrapper">
+                    <!-- Chat messages area -->
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Mock data inserted via JS -->
+                        <div class="chat-msg system">
+                            <div class="msg-meta">[系统通知]</div>
+                            <div class="msg-bubble">欢迎进入韭菜互助聊天室。请注意：本聊天室禁止哭泣，禁止向行长催债，违者封号（至下个世纪）。</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat input bar -->
+                    <form id="chat-form" class="chat-input-bar" onsubmit="return false;">
+                        <input type="text" id="chat-input" placeholder="输入聊天内容进行抱团取暖..." maxlength="100" autocomplete="off" required>
+                        <button type="submit" class="chat-send-btn">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="disclaimer-alert">
+                <div class="disclaimer-header">
+                    <i data-lucide="alert-triangle" class="text-danger animate-bounce"></i>
+                    <h3>⚠️ 核心免责与整活声明</h3>
+                </div>
+                <p>
+                    本网站（貔貅联合储蓄银行）为纯前端<strong>幽默娱乐整活项目</strong>，完全不涉及、不提供任何真实资金往来、理财或支付接口。
+                    您在表单中输入的卡号和金额<strong>仅在本地浏览器端被 JavaScript 模拟逻辑使用</strong>（并会随着页面刷新或关闭而自动丢弃），
+                    本站绝无后端数据库存储，更不会上传或泄露您的任何信息。请勿在此输入真实的敏感卡号或任何重要财产信息。
+                    如果因为游玩本网站导致产生了自己已经是万亿富豪的幻觉，本行保安大爷概不负责。
+                </p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 貔貅联合储蓄银行 (LUSB) - 韭菜互助联合会荣誉出品。保留行长跑路的一切解释权。
+            </div>
+        </footer>
+    </div>
+
+    <!-- Multi-stage Processing Modal (存钱加载中弹窗) -->
+    <div class="modal-overlay" id="loading-modal">
+        <div class="modal-card">
+            <div class="loading-spinner-wrapper">
+                <div class="spinner-core"></div>
+                <i data-lucide="rocket" class="spinner-center-icon"></i>
+            </div>
+            <h3 class="modal-title" id="loading-title">正在建立安全存款通道...</h3>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            
+            <div class="step-list" id="loading-steps">
+                <div class="step-item" id="step-0"><i data-lucide="circle-dashed" class="icon-spin"></i> 连接瑞士苏黎世地下金库...</div>
+                <div class="step-item" id="step-1"><i data-lucide="circle" class="icon-pending"></i> 正在将钞票折成精美纸飞机...</div>
+                <div class="step-item" id="step-2"><i data-lucide="circle" class="icon-pending"></i> 汇率锁定：人民币 1:1 兑换空气币...</div>
+                <div class="step-item" id="step-3"><i data-lucide="circle" class="icon-pending"></i> 正在为行长配置海外避税群岛房产...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Certificate Modal (存款成功搞笑凭证弹窗) -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="receipt-card">
+            <div class="receipt-ribbon">DEPOSIT SUCCESS</div>
+            <div class="receipt-header">
+                <i data-lucide="badge-check" class="receipt-success-icon"></i>
+                <h3>交易超度成功</h3>
+                <p>TRANSACTION MEMORY REGISTERED</p>
+            </div>
+            
+            <div class="receipt-body">
+                <div class="receipt-row">
+                    <span class="label">存入卡号</span>
+                    <span class="val" id="receipt-card-num">6222 **** 8888</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">存入金额</span>
+                    <span class="val text-success" id="receipt-amount">¥ 88,888,888.00</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">折合空气币</span>
+                    <span class="val" id="receipt-aircoin">88,888,888.00 AC</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">交易状态</span>
+                    <span class="val text-warning">资金已进入互联网深处 🌀</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">预计提现时间</span>
+                    <span class="val">公元 3026 年 5 月 22 日</span>
+                </div>
+                <div class="receipt-row signature-row">
+                    <div class="sig-block">
+                        <div class="sig-title">行长签字</div>
+                        <div class="sig-stamp">已跑路</div>
+                    </div>
+                    <div class="sig-block">
+                        <div class="sig-title">银行公章</div>
+                        <div class="stamp-round">
+                            <span>貔貅银行</span>
+                            <span>只存不取</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="receipt-funny-tips">
+                    <strong>💡 温馨提示：</strong> 您的提现申请本行已记录。提现通道目前正处于封闭公测阶段，预计公测时间 800 年，请您耐心排队，前方排队人数：<strong>1,425,892,104 人</strong>。
+                </div>
+            </div>
+
+            <div class="receipt-actions">
+                <button type="button" class="btn-secondary" id="btn-again">
+                    <i data-lucide="redo-2"></i> 再存一笔 (行长点赞)
+                </button>
+                <button type="button" class="btn-primary" id="btn-print">
+                    <i data-lucide="download"></i> 下载搞笑凭证
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Effects (Optional: we can play funny sounds or mock alerts) -->
+    <audio id="sound-coins" src="https://assets.mixkit.co/active_storage/sfx/2017/2017-84.wav" preload="auto"></audio>
+    
+    <!-- Coin Rain Canvas Overlay -->
+    <canvas id="coin-canvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
